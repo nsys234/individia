@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Individia | Championing Wellbeing & Community Transformation</title>
+    <meta name="description" content="Individia champions individual wellbeing, strengthens organisations, and transforms communities to create conditions where all can flourish.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+
+    <!-- Embedded CSS Stylesheet -->
+    <style>
+        :root {
+            --bg-color: #FAF6EE;
+            --navy-text: #0B1B3D;
+            --gold-accent: #C59B27;
+            --gold-light: #E0C171;
+            --white: #FFFFFF;
+            --font-heading: 'Playfair Display', Georgia, serif;
+            --font-body: 'Montserrat', Helvetica, sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--navy-text);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Layout Helpers */
+        .container {
+            width: 90%;
+            max-width: 1340px;
+            margin: 0 auto;
+        }
+
+        .section {
+            padding: 5rem 0;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        /* Brand Typography */
+        h1, h2, h3 {
+            font-family: var(--font-heading);
+            color: var(--navy-text);
+        }
+
+        h2 {
+            font-size: 2.25rem;
+            margin-top: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .brand-statement {
+            font-family: var(--font-body);
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 3px;
+            color: var(--gold-accent);
+            text-transform: uppercase;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.75rem;
+            border-radius: 0px;
+            font-weight: 500;
+            font-size: 1.1rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .btn-gold {
+            background-color: var(--gold-accent);
+            color: var(--white);
+            border: 1px solid var(--gold-accent);
+        }
+
+        .btn-gold:hover {
+            background-color: #a8831f;
+            transform: translateY(-2px);
+        }
+
+        .btn-navy {
+            background-color: var(--navy-text);
+            color: var(--gold-accent);
+            border: 1px solid var(--navy-text);
+            width: 100%;
+            justify-content: center;
+        }
+
+        .btn-navy:hover {
+            background-color: #142854;
+        }
+
+        .btn-outline {
+            border: 1px solid var(--gold-accent);
+            color: var(--navy-text);
+            background: transparent;
+        }
+
+        .btn-outline:hover {
+            background-color: var(--gold-accent);
+            color: var(--white);
+        }
+
+        .btn-link {
+            color: var(--navy-text);
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .btn-link:hover {
+            color: var(--gold-accent);
+        }
+
+        .icon-sm {
+            width: 16px;
+            height: 16px;
+        }
+
+        /* Header Navigation */
+        .site-header {
+            position: sticky;
+            top: 0;
+            background: #fff;
+            backdrop-filter: blur(8px);
+            z-index: 100;
+            border-bottom: 1px solid rgba(197, 155, 39, 0.2);
+            padding: 1.25rem 0;
+        }
+
+        .nav-container {
+            width: 90%;
+            max-width: 1340px;
+            background-color: #fff;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .brand-logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            text-decoration: none;
+        }
+          .logo-icon {
+    width: 196px;
+    height: 76px;
+    object-fit: contain;
+}
+
+        .logo-text {
+            font-family: var(--font-heading);
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: var(--navy-text);
+            letter-spacing: -0.5px;
+        }
+
+        .main-nav {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .main-nav a {
+            text-decoration: none;
+            color: var(--navy-text);
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .main-nav a:hover {
+            color: var(--gold-accent);
+        }
+
+        /* Hero Section */
+        .hero-section {
+            padding: 6rem 0 7rem;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .hero-title {
+            font-size: 5.2rem;
+            line-height: 1.15;
+            margin: 1rem 0;
+        }
+
+        .hero-subtitle {
+            font-size: 1.1rem;
+            color: #4a5568;
+            margin-bottom: 2rem;
+            font-weight: 300;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
+        }
+
+        .hero-card {
+            background: var(--white);
+            padding: 3rem 2.5rem;
+            border-radius: 12px;
+            border-left: 4px solid var(--gold-accent);
+            border-top: 1px solid rgba(197, 155, 39, 0.15);
+            border-right: 1px solid rgba(197, 155, 39, 0.15);
+            border-bottom: 1px solid rgba(197, 155, 39, 0.15);
+            box-shadow: 0 15px 35px rgba(11, 27, 61, 0.05);
+        }
+
+        .hero-card h3 {
+            font-size: 1.5rem;
+            color: var(--navy-text);
+            margin-bottom: 0.75rem;
+        }
+
+        .hero-card p {
+            font-size: 0.95rem;
+            color: #555;
+            font-weight: 300;
+        }
+
+        /* Decorative Divider */
+        .divider-line {
+            width: 100%;
+            max-width: 280px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--gold-accent), transparent);
+            margin: 0 auto;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .diamond {
+            color: var(--gold-accent);
+            font-size: 0.6rem;
+            background: var(--bg-color);
+            padding: 0 8px;
+        }
+
+        /* Pillars Grid */
+        .pillars-section {
+            background-color: #fff;
+        }
+
+        .pillars-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .pillar-card {
+            background: var(--white);
+            border-radius: 10px;
+            padding: 2.5rem 2rem;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.04);
+            border: 1px solid rgba(197, 155, 39, 0.15);
+            border-top: 3px solid var(--gold-accent);
+            transition: transform 0.3s ease;
+        }
+
+        .pillar-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .pillar-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .pillar-card p {
+            font-size: 0.95rem;
+            color: #555;
+            font-weight: 300;
+        }
+
+        /* About Section */
+        .about-section {
+            background: rgba(255, 255, 255, 0.5);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-highlight-box {
+            background: var(--navy-text);
+            color: var(--white);
+            padding: 3.5rem 3rem;
+            border-radius: 12px;
+            border-left: 4px solid var(--gold-accent);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+        }
+
+        .about-highlight-box p {
+            font-family: var(--font-heading);
+            font-size: 1.6rem;
+            line-height: 1.4;
+            color: var(--white);
+        }
+
+        .about-highlight-box span {
+            display: block;
+            margin-top: 1.5rem;
+            color: var(--gold-accent);
+            font-family: var(--font-body);
+            font-size: 0.85rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .closing-statement {
+            font-family: var(--font-heading);
+            font-style: italic;
+            font-size: 1.4rem;
+            color: var(--gold-accent);
+            margin: 1rem 0;
+            border-left: 2px solid var(--gold-accent);
+            padding-left: 1rem;
+        }
+
+        /* Impact Stats */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .impact-section {
+            background-color: #fff;
+        }
+
+        .stat-card {
+            background: var(--white);
+            padding: 2.5rem 1rem;
+            border-radius: 8px;
+            border: 1px solid rgba(197, 155, 39, 0.2);
+        }
+
+        .stat-number {
+            display: block;
+            font-family: var(--font-heading);
+            font-size: 2.5rem;
+            color: var(--navy-text);
+            font-weight: 700;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: var(--gold-accent);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        /* Pop-up Modal Styles */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(11, 27, 61, 0.65);
+            backdrop-filter: blur(5px);
+            z-index: 1000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .modal-card {
+            background: var(--white);
+            width: 90%;
+            max-width: 550px;
+            padding: 2.5rem;
+            border-radius: 12px;
+            border: 1px solid rgba(197, 155, 39, 0.3);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+            position: relative;
+            transform: translateY(20px);
+            transition: transform 0.3s ease;
+        }
+
+        .modal-overlay.active .modal-card {
+            transform: translateY(0);
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 1rem;
+            right: 1.2rem;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--navy-text);
+            cursor: pointer;
+            transition: color 0.2s ease;
+        }
+
+        .modal-close:hover {
+            color: var(--gold-accent);
+        }
+
+        .modal-form {
+            margin-top: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.85rem 1rem;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-family: var(--font-body);
+            background: #FAF6EE;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--gold-accent);
+        }
+
+        /* Footer */
+        .site-footer {
+            background: var(--navy-text);
+            color: var(--white);
+            padding: 3rem 0 1.5rem;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .footer-brand .logo-text {
+            color: var(--gold-accent);
+        }
+
+        .footer-brand p {
+            font-size: 0.85rem;
+            opacity: 0.7;
+        }
+
+        .footer-links {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .social-icon {
+            color: var(--gold-accent);
+            display: flex;
+            align-items: center;
+        }
+
+        .social-icon svg {
+            width: 22px;
+            height: 22px;
+        }
+
+        .email-link {
+            color: var(--white);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-size: 0.9rem;
+        }
+
+        .email-icon {
+            width: 16px;
+            height: 16px;
+            fill: var(--gold-accent);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 1.5rem;
+            font-size: 0.8rem;
+            opacity: 0.6;
+        }
+
+        /* Animation */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive Breakpoints */
+        @media (max-width: 868px) {
+            .hero-grid, .about-grid, .pillars-grid, .stats-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .main-nav {
+                display: none;
+            }
+
+            .hero-title {
+                font-size: 2.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header class="site-header">
+        <div class="nav-container">
+            <a href="#" class="brand-logo">
+    <img src="images/logo.png" alt="Individia Logo" class="logo-icon">
+    
+</a>
+            
+            <nav class="main-nav">
+                <a href="#about">About Us</a>
+                <a href="#services">Pillars</a>
+                <a href="#impact">Impact</a>
+            </nav>
+
+            <button class="btn btn-outline trigger-contact-modal">
+                <span>Get in touch</span>
+                <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+                    <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container hero-grid fade-in">
+            <div class="hero-content">
+                <p class="brand-statement">WELCOME TO INDIVIDIA</p>
+                <h1 class="hero-title">EVERY INDIVIDUAL MATTERS</h1>
+                <p class="hero-subtitle">We partner with individuals, businesses, and civic groups to build resilient environments rooted in purpose and wellbeing.</p>
+                <div class="hero-actions">
+                    <button class="btn btn-gold trigger-contact-modal">Get in Touch</button>
+                    <a href="#about" class="btn btn-link">Learn More &rarr;</a>
+                </div>
+            </div>
+            <div class="hero-card">
+                <h3>People First</h3>
+                <p>Creating conditions for purposeful and lasting organizational impact through human-centered wellbeing strategies.</p>
+            </div>
+        </div>
+    </section>
+
+    <div class="divider-line"><span class="diamond">◆</span></div>
+
+    <!-- Core Positioning / Three Pillars Section -->
+    <section id="services" class="section pillars-section">
+        <div class="container fade-in">
+            <div class="section-header text-center">
+                <p class="brand-statement">OUR CORE PILLARS</p>
+                <h2>Strategic Solutions for Lasting Flourishing</h2>
+            </div>
+
+            <div class="pillars-grid">
+                <!-- Pillar 1 -->
+                <div class="pillar-card">
+                    <h3>Championing Individual Wellbeing</h3>
+                    <p>Tailored coaching, personal growth frameworks, and wellbeing initiatives designed to help people operate at their natural best.</p>
+                </div>
+
+                <!-- Pillar 2 -->
+                <div class="pillar-card">
+                    <h3>Strengthening Organisations</h3>
+                    <p>Culture transformation, leadership alignment, and strategic consulting to foster high-performing, humane work environments.</p>
+                </div>
+
+                <!-- Pillar 3 -->
+                <div class="pillar-card">
+                    <h3>Transforming Communities</h3>
+                    <p>Grassroots partnerships and social impact programs structured to drive long-term civic connectivity and community strength.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section about-section">
+        <div class="container about-grid fade-in">
+            <div class="about-highlight-box">
+                <p>"Creating the conditions for individuals, organisations and communities to flourish."</p>
+                <span>Individia Core Principle</span>
+            </div>
+            <div class="about-content">
+                <p class="brand-statement">PHILOSOPHY & APPROACH</p>
+                <h2>A unified vision for sustainable growth</h2>
+                <blockquote class="closing-statement">
+                    Connecting human potential with collective purpose.
+                </blockquote>
+                <p>At Individia, we believe that organizational success and individual health are deeply interconnected. True transformation cannot happen in isolation; it requires a systemic approach that links human potential with collective purpose.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Impact Stats Section -->
+    <section id="impact" class="section impact-section">
+        <div class="container fade-in text-center">
+            <p class="brand-statement">OUR COMMITMENT</p>
+            <h2>Proven Paths to Growth</h2>
+            
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <span class="stat-number">100%</span>
+                    <span class="stat-label">Human-Centred Focus</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">3 Pillars</span>
+                    <span class="stat-label">Integrated Ecosystem</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">Sustainable</span>
+                    <span class="stat-label">Long-Term Impact</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container footer-content">
+            <div class="footer-brand">
+                <span class="logo-text">Individia</span>
+                <p>Creating conditions to flourish.</p>
+            </div>
+            
+            <div class="footer-links">
+                <a href="https://linkedin.com" target="_blank" rel="noopener" class="social-icon" aria-label="LinkedIn">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-0.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
+                    </svg>
+                </a>
+                <span class="footer-separator">|</span>
+                <a href="mailto:info@individia.co.uk" class="email-link">
+                    <svg class="email-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                    </svg>
+                    info@individia.co.uk
+                </a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Individia. All Rights Reserved.</p>
+        </div>
+    </footer>
+    
+    <!-- Pop-up Contact Modal -->
+    <div class="modal-overlay" id="contactModal">
+        <div class="modal-card">
+            <button class="modal-close" id="closeModal">&times;</button>
+            <div class="text-center">
+                <p class="brand-statement">GET IN TOUCH</p>
+                <h2>Start a Conversation</h2>
+                <p style="font-size: 0.9rem; color: #666;">Fill in your details below and our team will get back to you shortly.</p>
+            </div>
+            <form class="modal-form" id="contactForm">
+                <div class="form-group">
+                    <input type="text" placeholder="Your Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" placeholder="Email Address" required>
+                </div>
+                <div class="form-group">
+                    <textarea rows="4" placeholder="How can we help you?" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-navy">Send Message</button>
+            </form>
+        </div>
+    </div>
+
+   <!-- JavaScript Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Animation Observer
+            const animatedElements = document.querySelectorAll('.fade-in');
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            animatedElements.forEach(el => observer.observe(el));
+
+            // Modal Functionality
+            const modal = document.getElementById('contactModal');
+            const openButtons = document.querySelectorAll('.trigger-contact-modal');
+            const closeButton = document.getElementById('closeModal');
+            const contactForm = document.getElementById('contactForm');
+
+            const openModal = () => {
+                modal.classList.add('active');
+                document.body.classList.add('modal-open');
+            };
+
+            const closeModal = () => {
+                modal.classList.remove('active');
+                document.body.classList.remove('modal-open');
+            };
+
+            openButtons.forEach(btn => btn.addEventListener('click', openModal));
+            closeButton.addEventListener('click', closeModal);
+
+            // Close when clicking outside of the modal box
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    closeModal();
+                }
+            });
+
+            // Form Submit Behavior
+            contactForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                alert('Thank you for reaching out! We will be in touch soon.');
+                contactForm.reset();
+                closeModal();
+            });
+        });
+    </script>
+</body>
+</html>
